@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 import { ProductsComponent } from './containers/products/products.component';
 import { CartComponent } from './containers/cart/cart.component';
@@ -33,7 +36,14 @@ const routes: Routes = [
     CartItemComponent,
     ProductComponent,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes), HttpClientModule],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    HttpClientModule,
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule,
+  ],
   providers: [ProductsService],
 })
 export class ProductsModule {}
