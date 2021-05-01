@@ -145,6 +145,31 @@
           }
         }
       }
+    },
+    "eshop-ui": {
+      "projectType": "library",
+      "root": "libs/eshop-ui",
+      "sourceRoot": "libs/eshop-ui/src",
+      "prefix": "eshop",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/eshop-ui/src/**/*.ts",
+              "libs/eshop-ui/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/eshop-ui"],
+          "options": {
+            "jestConfig": "libs/eshop-ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

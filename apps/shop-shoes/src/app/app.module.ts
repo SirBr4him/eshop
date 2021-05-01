@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 
+import { EshopUiModule } from '@eshop/eshop-ui';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
@@ -13,7 +14,7 @@ const routes: Routes = [
 ];
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, RouterModule.forRoot(routes)],
+  imports: [BrowserModule, RouterModule.forRoot(routes), EshopUiModule],
   providers: [],
   bootstrap: [AppComponent],
 })
