@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IProduct } from '../../models/product.interface';
+import { Product } from '@prisma/client';
 
 @Component({
   selector: 'eshop-cart',
@@ -8,7 +8,7 @@ import { IProduct } from '../../models/product.interface';
   styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent implements OnInit {
-  items$: Observable<IProduct[]>;
+  items$: Observable<Product[]>;
 
   constructor() {}
 

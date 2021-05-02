@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IProduct } from '../../models/product.interface';
+import { Product } from '@prisma/client';
+import { ProductsService } from '../../services/products.service';
 
 @Component({
   selector: 'eshop-products',
@@ -8,9 +9,11 @@ import { IProduct } from '../../models/product.interface';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent implements OnInit {
-  products$: Observable<IProduct[]>;
+  products$: Observable<Product[]>;
 
-  constructor() {}
+  constructor(private productsService: ProductsService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.products$ = this.productsService.getProducts();
+  }
 }

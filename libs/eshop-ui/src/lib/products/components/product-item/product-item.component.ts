@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { IProduct } from '../../models/product.interface';
+import { Component, Input } from '@angular/core';
+import { Product } from '@prisma/client';
 
 @Component({
   selector: 'eshop-product-item',
@@ -8,5 +8,5 @@ import { IProduct } from '../../models/product.interface';
 })
 export class ProductItemComponent {
   @Input()
-  product: IProduct;
+  product: Product;
 }

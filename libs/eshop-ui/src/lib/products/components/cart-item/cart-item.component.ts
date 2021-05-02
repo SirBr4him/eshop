@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IProduct } from '../../models/product.interface';
+import { Product } from '@prisma/client';
 
 @Component({
   selector: 'eshop-cart-item',
@@ -8,7 +8,7 @@ import { IProduct } from '../../models/product.interface';
 })
 export class CartItemComponent {
   @Input()
-  product: IProduct;
+  product: Product;
 
   quantity = 1;
   private max = 10;
