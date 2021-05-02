@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@eshop/eshop-ui": ["libs/eshop-ui/src/index.ts"]
+      "@eshop/eshop-ui": ["libs/eshop-ui/src/index.ts"],
+      "@eshop/products": ["libs/products/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

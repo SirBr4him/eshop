@@ -15,6 +15,7 @@
     "shop-shoes": { "tags": [] },
     "shop-shoes-e2e": { "tags": [], "implicitDependencies": ["shop-shoes"] },
     "eshop-ui": { "tags": [] },
-    "api": { "tags": [] }
+    "api": { "tags": [] },
+    "products": { "tags": [] }
   }
 }
