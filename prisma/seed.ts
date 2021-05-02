@@ -2,7 +2,7 @@ import { PrismaClient, Product } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-const items: Product[] = [
+const items = [
   {
     name: 'Air Jordan 4 “Super Nintendo”',
     description: 'Great fit, super comfy',
