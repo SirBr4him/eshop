@@ -8,21 +8,18 @@ const items = [
     description: 'Great fit, super comfy',
     image: 'https://i.imgur.com/cYeomek.png',
     price: 255,
-    sku: '123',
   },
   {
     name: 'Air jordan 4 Cement',
     description: 'Awesome for cold days',
     image: 'https://i.imgur.com/OGW9naM.jpeg',
     price: 188,
-    sku: '456',
   },
   {
     name: 'Air Jordan Off-White 5',
     description: 'A little fancier',
     image: 'https://i.imgur.com/BShhvX1.jpg',
     price: 325,
-    sku: '789',
   },
 ];
 

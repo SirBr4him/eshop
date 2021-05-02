@@ -16,5 +16,4 @@ model Product {
   description String
   image       String
   price       Int
-  sku         String
 }

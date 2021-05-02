@@ -6,5 +6,7 @@ export class ProductsController {
   constructor(private productsService: ProductsService) {}
 
   @Get()
-  public async getProducts() {}
+  public async getProducts() {
+    await this.productsService.getProducts();
+  }
 }
