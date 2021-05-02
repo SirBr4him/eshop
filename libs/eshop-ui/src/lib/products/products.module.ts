@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { ProductsComponent } from './containers/products/products.component';
 import { CartComponent } from './containers/cart/cart.component';
@@ -43,6 +44,7 @@ const routes: Routes = [
     MatCardModule,
     MatButtonModule,
     MatIconModule,
+    MatTooltipModule,
   ],
   providers: [ProductsService],
 })

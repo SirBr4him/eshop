@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Product } from '@prisma/client';
 import { ProductsService } from '../../services/products.service';
 
@@ -10,10 +10,13 @@ import { ProductsService } from '../../services/products.service';
 })
 export class ProductsComponent implements OnInit {
   products$: Observable<Product[]>;
+  subs: Subscription;
 
   constructor(private productsService: ProductsService) {}
 
   ngOnInit(): void {
-    this.products$ = this.productsService.getProducts();
+    this.subs = new Subscription();
+    this.subs.add(this.productsService.getProducts().subscribe());
+    this.products$ = this.productsService.products$;
   }
 }

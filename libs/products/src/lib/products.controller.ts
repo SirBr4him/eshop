@@ -7,6 +7,6 @@ export class ProductsController {
 
   @Get()
   public async getProducts() {
-    await this.productsService.getProducts();
+    return await this.productsService.getProducts();
   }
 }

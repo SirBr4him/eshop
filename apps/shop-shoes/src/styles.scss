@@ -3,11 +3,13 @@
 @import '~bootstrap/scss/variables';
 
 @import '~bootstrap/scss/mixins/deprecate';
+@import '~bootstrap/scss/mixins/hover';
 @import '~bootstrap/scss/mixins/breakpoints';
 @import '~bootstrap/scss/mixins/grid-framework';
 @import '~bootstrap/scss/mixins/grid';
 @import '~bootstrap/scss/mixins/text-emphasis';
 @import '~bootstrap/scss/mixins/text-hide';
+@import '~bootstrap/scss/mixins/text-truncate';
 
 @import '~bootstrap/scss/grid';
 @import '~bootstrap/scss/utilities/display';
@@ -19,9 +21,9 @@
 
 @include mat-core();
 
-$eshop-primary: map-palette($mat-indigo, 600, 400, 800);
-$eshop-accent: map-palette($mat-cyan, 200, 100, 400);
-$eshop-warn: map-palette($mat-red);
+$eshop-primary: mat-palette($mat-indigo, 600, 400, 800);
+$eshop-accent: mat-palette($mat-cyan, 200, 100, 400);
+$eshop-warn: mat-palette($mat-red);
 
 $eshop-theme: mat-light-theme(
   (
@@ -37,6 +39,5 @@ $eshop-theme: mat-light-theme(
 
 html,
 body {
-  width: 100%;
   height: 100%;
 }
