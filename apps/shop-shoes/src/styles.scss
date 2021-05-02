@@ -21,7 +21,7 @@
 
 @include mat-core();
 
-$eshop-primary: mat-palette($mat-indigo, 600, 400, 800);
+$eshop-primary: mat-palette($mat-indigo, 400, 200, 600);
 $eshop-accent: mat-palette($mat-cyan, 200, 100, 400);
 $eshop-warn: mat-palette($mat-red);
 
@@ -39,5 +39,6 @@ $eshop-theme: mat-light-theme(
 
 html,
 body {
+  margin: 0;
   height: 100%;
 }

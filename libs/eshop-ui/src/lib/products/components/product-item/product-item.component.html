@@ -5,10 +5,19 @@
     <h2>$ {{ product.price }}</h2>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-mini-fab class="mr-2">
+    <button
+      mat-mini-fab
+      class="mr-2"
+      aria-label="button show product"
+      matTooltip="Show product"
+    >
       <mat-icon>visibility</mat-icon>
     </button>
-    <button mat-mini-fab>
+    <button
+      mat-mini-fab
+      aria-label="button add to cart"
+      matTooltip="Add product to cart"
+    >
       <mat-icon>add_shopping_cart</mat-icon>
     </button>
   </mat-card-actions>

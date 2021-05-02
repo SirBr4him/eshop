@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@eshop/eshop-ui": ["libs/eshop-ui/src/index.ts"],
+      "@eshop/eshop-ui/core": ["libs/eshop-ui/src/lib/core/index.ts"],
       "@eshop/products": ["libs/products/src/index.ts"]
     }
   },
