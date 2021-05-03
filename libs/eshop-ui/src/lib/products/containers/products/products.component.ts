@@ -20,6 +20,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subs = new Subscription();
+    this.loadProducts();
     this.products$ = this.productsService.products$;
   }
 
