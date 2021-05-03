@@ -1,6 +1,40 @@
-
-
 # Eshop
+
+## Run the solution in localhost
+
+follow the steps in this order
+
+- [npm]
+
+  - `npm install`
+  - `npm start api`
+  - `npm start numbers`
+
+- [yarn]
+
+  - `yarn install`
+  - `yarn start api`
+  - `yarn start numbers`
+
+The back-end api will run on `http://localhost:3333/api`
+
+The back-end api swagger docs will run on `http://localhost:3333/docs`
+
+The front-end app will run on `http://localhost:4200`
+
+## Run tests
+
+- [npm]
+
+  - `npm run test {projectName}`
+
+- [yarn]
+
+  - `yarn test {projectName}`
+
+The {projectName} can be an {appName} or a {libName} those names are the folder names inside apps and libs folders.
+
+## About used tools
 
 This project was generated using [Nx](https://nx.dev).
 
@@ -86,11 +120,6 @@ Run `nx dep-graph` to see a diagram of the dependencies of your projects.
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
-
-
-
-
-
 
 ## ☁ Nx Cloud
 
