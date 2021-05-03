@@ -7,6 +7,12 @@
     mat-icon-button
     aria-label="button show carts items"
   >
-    <mat-icon>shopping_cart</mat-icon>
+    <mat-icon
+      [matBadge]="cartCount || 0"
+      matBadgePosition="after"
+      matBadgeColor="accent"
+    >
+      shopping_cart
+    </mat-icon>
   </a>
 </mat-toolbar>

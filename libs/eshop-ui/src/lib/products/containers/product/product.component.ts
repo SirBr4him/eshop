@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { filter, map, switchMap } from 'rxjs/operators';
+import { CartService } from '@eshop/eshop-ui/core';
 import { ProductsService } from '../../services/products.service';
 
 @Component({
@@ -17,7 +18,8 @@ export class ProductComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private productsService: ProductsService
+    private productsService: ProductsService,
+    private cartService: CartService
   ) {}
 
   private loadProduct() {
@@ -39,6 +41,6 @@ export class ProductComponent implements OnInit {
   }
 
   addProductToCart(product: Product) {
-    this.productsService.addToCart({ ...product, quantity: 1 });
+    this.cartService.addToCart({ ...product, quantity: 1 });
   }
 }

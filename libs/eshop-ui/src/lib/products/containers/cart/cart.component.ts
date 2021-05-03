@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
-import { ProductsService } from '../../services/products.service';
-import { CartITem } from '../../models/cart-item.interface';
 import { filter, map, tap } from 'rxjs/operators';
+
+import { CartITem, CartService } from '@eshop/eshop-ui/core';
 
 @Component({
   selector: 'eshop-cart',
@@ -14,33 +14,30 @@ export class CartComponent implements OnInit, OnDestroy {
   cartTotal$: Observable<number>;
   subs: Subscription;
 
-  constructor(private productsService: ProductsService) {}
+  constructor(private cartService: CartService) {}
 
   private loadItems() {
-    this.subs.add(this.productsService.getCartItems().subscribe());
+    this.subs.add(this.cartService.getCartItems().subscribe());
   }
 
   ngOnInit(): void {
     this.subs = new Subscription();
     this.loadItems();
-    this.items$ = this.productsService.cartItems$;
-    this.cartTotal$ = this.productsService.cartItems$.pipe(
+    this.items$ = this.cartService.cartItems$;
+    this.cartTotal$ = this.cartService.cartItems$.pipe(
       filter((items) => !!items?.length),
       map((items) =>
         items.reduce(
           (total, { price, quantity }) => total + price * quantity,
           0
         )
-      ),
-      tap((tot) => {
-        console.log(tot);
-      })
+      )
     );
   }
 
   updateItem(item: CartITem) {
     this.subs.add(
-      this.productsService.updateCartItem(item).subscribe(() => {
+      this.cartService.updateCartItem(item).subscribe(() => {
         this.loadItems();
       })
     );
@@ -48,7 +45,7 @@ export class CartComponent implements OnInit, OnDestroy {
 
   removeItem(id: string) {
     this.subs.add(
-      this.productsService.removeFromCart(id).subscribe(() => {
+      this.cartService.removeFromCart(id).subscribe(() => {
         this.loadItems();
       })
     );
