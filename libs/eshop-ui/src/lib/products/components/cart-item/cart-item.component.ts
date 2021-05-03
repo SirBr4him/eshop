@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Product } from '@prisma/client';
 
 @Component({
@@ -9,6 +9,8 @@ import { Product } from '@prisma/client';
 export class CartItemComponent {
   @Input()
   product: Product;
+  @Output()
+  removeItem = new EventEmitter<string>();
 
   quantity = 1;
   private max = 10;
@@ -24,5 +26,9 @@ export class CartItemComponent {
     if (this.quantity > this.min) {
       this.quantity--;
     }
+  }
+
+  deleteItem(id: string) {
+    this.removeItem.emit(id);
   }
 }
