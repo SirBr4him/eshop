@@ -20,7 +20,6 @@ async function bootstrap() {
     .setTitle('eshop api')
     .setDescription('The eshop challenge api ')
     .setVersion('1.0')
-    .addTag('eshop')
     .build();
   const document = SwaggerModule.createDocument(app, config);
 
