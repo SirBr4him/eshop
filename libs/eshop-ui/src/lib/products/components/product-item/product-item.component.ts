@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Product } from '@prisma/client';
 
 @Component({
@@ -9,4 +9,11 @@ import { Product } from '@prisma/client';
 export class ProductItemComponent {
   @Input()
   product: Product;
+
+  @Output()
+  addToCart = new EventEmitter<Product>();
+
+  addProductToCart(item: Product) {
+    this.addToCart.emit(item);
+  }
 }
