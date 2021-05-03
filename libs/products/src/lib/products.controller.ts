@@ -1,4 +1,3 @@
-import { Product } from '.prisma/client';
 import { Controller, Get, Param } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 
