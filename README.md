@@ -8,13 +8,13 @@ follow the steps in this order
 
   - `npm install`
   - `npm start api`
-  - `npm start numbers`
+  - `npm start shop-shoes`
 
 - [yarn]
 
   - `yarn install`
   - `yarn start api`
-  - `yarn start numbers`
+  - `yarn start shop-shoes`
 
 The back-end api will run on `http://localhost:3333/api`
 
