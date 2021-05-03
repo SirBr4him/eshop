@@ -25,7 +25,7 @@ const routes: Routes = [
   },
   {
     path: ':productId',
-    component: ProductsComponent,
+    component: ProductComponent,
   },
 ];
 

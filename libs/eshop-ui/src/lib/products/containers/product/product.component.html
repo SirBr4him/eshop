@@ -1,1 +1,23 @@
-<p>product works!</p>
+<div class="container pt-3" *ngIf="product$ | async as product">
+  <div class="product-gallery pb-3">
+    <img [src]="product.image" />
+  </div>
+  <div class="row py-3">
+    <div class="col-lg-6">
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+    </div>
+    <div class="col text-right">
+      <h2>$ {{ product.price }}</h2>
+      <button
+        mat-button
+        aria-label="button add to cart"
+        matTooltip="Add product to cart"
+        (click)="addProductToCart(product)"
+      >
+        <mat-icon>add_shopping_cart</mat-icon>
+        Add to cart
+      </button>
+    </div>
+  </div>
+</div>

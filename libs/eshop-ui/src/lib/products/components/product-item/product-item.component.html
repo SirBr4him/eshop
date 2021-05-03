@@ -1,18 +1,21 @@
 <mat-card class="product-item-card text-center">
-  <img mat-card-image [src]="product.image" [alt]="product.name" />
+  <dic class="product-image" mat-card-image>
+    <img [src]="product.image" [alt]="product.name" />
+  </dic>
   <mat-card-content>
     <h3>{{ product.name }}</h3>
     <h2>$ {{ product.price }}</h2>
   </mat-card-content>
   <mat-card-actions>
-    <button
+    <a
+      [routerLink]="['/products/' + product.id]"
       mat-mini-fab
       class="mr-2"
       aria-label="button show product"
       matTooltip="Show product"
     >
       <mat-icon>visibility</mat-icon>
-    </button>
+    </a>
     <button
       mat-mini-fab
       aria-label="button add to cart"

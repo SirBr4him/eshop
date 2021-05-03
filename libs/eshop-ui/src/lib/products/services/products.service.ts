@@ -12,6 +12,7 @@ import { CartITem } from '../models/cart-item.interface';
 @Injectable()
 export class ProductsService {
   products$ = this.store.select<Product[]>('products');
+  product$ = this.store.select<Product>('product');
   cartItems$ = this.store.select<CartITem[]>('cart');
 
   private cart: Dexie.Table<CartITem>;
@@ -28,6 +29,14 @@ export class ProductsService {
     return this.http.get<Product[]>('/api/products').pipe(
       tap((products) => {
         this.store.set('products', products);
+      })
+    );
+  }
+
+  getProduct(id: string): Observable<Product> {
+    return this.http.get<Product>(`/api/products/${id}`).pipe(
+      tap((product) => {
+        this.store.set('product', product);
       })
     );
   }

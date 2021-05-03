@@ -1,0 +1,10 @@
+.product-gallery {
+  height: 800px;
+  overflow-y: hidden;
+  display: flex;
+  align-items: center;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}

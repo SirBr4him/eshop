@@ -1,4 +1,8 @@
 .item-img {
+  height: 200px;
+  overflow-y: hidden;
+  display: flex;
+  align-items: center;
   img {
     width: 100%;
     height: auto;
