@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Product } from '@prisma/client';
+import { CartITem } from '../../models/cart-item.interface';
 
 @Component({
   selector: 'eshop-cart-item',
@@ -8,27 +8,37 @@ import { Product } from '@prisma/client';
 })
 export class CartItemComponent {
   @Input()
-  product: Product;
+  item: CartITem;
   @Output()
-  removeItem = new EventEmitter<string>();
+  itemRemoved = new EventEmitter<string>();
+  @Output()
+  itemUpdated = new EventEmitter<CartITem>();
 
-  quantity = 1;
   private max = 10;
   private min = 1;
 
-  add() {
-    if (this.quantity < this.max) {
-      this.quantity++;
+  private updateItem(quantity: number) {
+    this.item = { ...this.item, quantity };
+    this.itemUpdated.emit(this.item);
+  }
+
+  addQuantity() {
+    let { quantity } = this.item;
+    if (quantity < this.max) {
+      quantity++;
+      this.updateItem(quantity);
     }
   }
 
-  remove() {
-    if (this.quantity > this.min) {
-      this.quantity--;
+  removeQuantity() {
+    let { quantity } = this.item;
+    if (quantity > this.min) {
+      quantity--;
+      this.updateItem(quantity);
     }
   }
 
-  deleteItem(id: string) {
-    this.removeItem.emit(id);
+  removeItem(id: string) {
+    this.itemRemoved.emit(id);
   }
 }

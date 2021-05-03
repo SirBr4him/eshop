@@ -25,7 +25,13 @@ export class ProductsComponent implements OnInit, OnDestroy {
   }
 
   addToCart(product: Product) {
-    this.subs.add(this.productsService.addToCart(product).subscribe());
+    this.subs.add(
+      this.productsService
+        .addToCart({ ...product, quantity: 1 })
+        .subscribe((resp) => {
+          console.log(resp);
+        })
+    );
   }
 
   ngOnDestroy() {

@@ -1,7 +1,12 @@
 <mat-toolbar color="primary">
-  <span>E-Shop shoes</span>
+  <a [routerLink]="['/']" mat-button>E-Shop shoes</a>
   <span class="header-spacer"></span>
-  <button mat-icon-button aria-label="button show carts items">
+  <a
+    [routerLink]="['/products/cart']"
+    routerLinkActive="active"
+    mat-icon-button
+    aria-label="button show carts items"
+  >
     <mat-icon>shopping_cart</mat-icon>
-  </button>
+  </a>
 </mat-toolbar>

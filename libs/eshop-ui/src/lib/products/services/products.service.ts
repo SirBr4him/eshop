@@ -7,13 +7,14 @@ import { tap } from 'rxjs/operators';
 
 import { Store } from '../../store';
 import { DexieService } from '../../core/services/dexie.service';
+import { CartITem } from '../models/cart-item.interface';
 
 @Injectable()
 export class ProductsService {
   products$ = this.store.select<Product[]>('products');
-  cartItems$ = this.store.select<Product[]>('cart');
+  cartItems$ = this.store.select<CartITem[]>('cart');
 
-  private cart: Dexie.Table<Product>;
+  private cart: Dexie.Table<CartITem>;
 
   constructor(
     private http: HttpClient,
@@ -31,7 +32,7 @@ export class ProductsService {
     );
   }
 
-  getCartItems(): Observable<Product[]> {
+  getCartItems(): Observable<CartITem[]> {
     return from(this.cart.toArray()).pipe(
       tap((items) => {
         this.store.set('cart', items);
@@ -39,8 +40,13 @@ export class ProductsService {
     );
   }
 
-  addToCart(item: Product): Observable<Product> {
+  addToCart(item: CartITem): Observable<CartITem> {
     return from(this.cart.add(item));
+  }
+
+  updateCartItem(item: CartITem): Observable<number> {
+    const { id } = item;
+    return from(this.cart.update(id, item));
   }
 
   removeFromCart(itemId: string): Observable<void> {
